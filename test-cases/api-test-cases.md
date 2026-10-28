@@ -221,7 +221,6 @@ PATCH https://jsonplaceholder.typicode.com/users/2
 
 **Status:** **PASS**
 
-**Note:** I recorded PASS, but did not separately record the HTTP status code in the Actual result.
 
 ### TC-API-007 - Delete User
 
