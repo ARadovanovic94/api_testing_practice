@@ -213,7 +213,11 @@ PATCH https://jsonplaceholder.typicode.com/users/2
 
 **Expected Result:** API returns `200 OK`, keeps `id: 2`, and updates only the requested email field.
 
-**Actual Result:** API returned user `id: 2` with the email changed to `new.email@example.com`. The update behaved as expected.
+**Actual Result:**
+
+- API returned 200 OK.
+- Response contained user ID 2.
+- Email was updated to "new.email@example.com".
 
 **Status:** **PASS**
 
