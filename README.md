@@ -1,14 +1,14 @@
 # API Testing Practice - JSONPlaceholder
 
-I used Postman to test ten requests on the JSONPlaceholder `/users` resource. For each test, I recorded the expected result, the actual response, and a PASS or FAIL status.
+I used Postman to test eleven scenarios on the JSONPlaceholder `/users` resource. For each test, I recorded the expected result, the actual response, and a PASS or FAIL status.
 
-The cases cover reading users, requesting a user that does not exist, creating and updating a user, deleting a user, filtering by username, and sending invalid JSON.
+The cases cover reading users, checking nested JSON fields, requesting a user that does not exist, creating and updating a user, deleting a user, filtering by username, and sending invalid JSON.
 
 ## Results
 
 | Total test cases | PASS | FAIL |
 |---|---|---|
-| 10 | 9 | 1 |
+| 11 | 10 | 1 |
 
 TC-API-009 failed against the expectation defined for this practice scenario. I expected a client error such as `400 Bad Request` for invalid JSON, but the API returned `500 Internal Server Error` with a JSON parsing stack trace. This is not reported as a confirmed defect because no formal requirement specifies an HTTP 400 response for this public mock API.
 
@@ -27,7 +27,7 @@ api_testing_practice/
     └── limitations.md
 ```
 
-- [Test cases](test-cases/api-test-cases.md): steps, request data, and Expected / Actual / Status for all ten tests.
+- [Test cases](test-cases/api-test-cases.md): steps, request data, and Expected / Actual / Status for all eleven tests.
 - [Postman collection](postman/QA%20Portfolio%20-%20API%20Testing.postman_collection.json): the exported Collection v2.1 file.
 - [Notes and limitations](notes/limitations.md): API behavior and details about the recorded results.
 
