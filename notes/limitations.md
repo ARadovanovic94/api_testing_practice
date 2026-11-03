@@ -4,12 +4,13 @@
 
 I recorded the Expected / Actual / Status results during manual testing in Postman. The collection contains the saved methods, URLs, and request bodies.
 
-The result was **9 PASS and 1 FAIL**. The collection has no automated assertions, and its `response` arrays are empty. Saved response examples are not included; the Actual entries summarize my manual observations.
+The current result is **11 executed test cases: 10 PASS and 1 FAIL**. The collection has no automated assertions, and its `response` arrays are empty. Saved response examples are not included; the Actual entries summarize my manual observations.
 
 - **TC-API-003:** my note describes the response body as empty. The exact raw response body was not saved.
-- **TC-API-006:** my note records user `id: 2`, the changed email, and PASS. I did not separately record the HTTP status code in the Actual result; `200 OK` is the expected status.
+- **TC-API-006:** I repeated the PATCH request and confirmed HTTP `200 OK`, user `id: 2`, and email "new.email@example.com" in the response. The updated Actual Result is recorded as PASS.
+- **TC-API-011:** I checked HTTP `200 OK`, user `id: 2`, and the nested fields `address.city` ("Wisokyburgh") and `company.name` ("Deckow-Crist"). The result is recorded as PASS.
 
-Response times and an exact execution date were not recorded.
+Response times and exact execution dates are not included in these repository test records.
 
 ## Simulated changes
 
@@ -25,6 +26,6 @@ TC-API-009 is recorded as a failed test based on the expected behavior defined f
 
 ## Collection
 
-The Postman Collection v2.1 export contains ten requests and is included without changes. It has no scripts, authentication configuration, variables, or external file dependencies. No separate environment file is needed.
+The Postman Collection v2.1 file contains eleven saved requests, including TC-API-011. It has no automated test scripts, authentication configuration, variables, or external file dependencies. No separate environment file is needed.
 
 The collection file itself is valid JSON. The invalid JSON for TC-API-009 is stored inside its request-body string.
