@@ -2,7 +2,7 @@
 
 ## Execution summary
 
-**10 test cases: 9 PASS, 1 FAIL.** I checked these requests manually in Postman.
+**11 test cases: 10 PASS, 1 FAIL.** I checked these requests manually in Postman.
 
 Expected and Actual results below come from my test notes. The request data matches the exported collection. PASS and FAIL are manual results; the collection has no automated assertions or saved response examples.
 
@@ -29,6 +29,7 @@ Expected and Actual results below come from my test notes. The request data matc
 | TC-API-008 | Filter Users by Username | GET | **PASS** |
 | TC-API-009 | Create User With Invalid JSON | POST | **FAIL** |
 | TC-API-010 | Filter Users by Non-Existing Username | GET | **PASS** |
+| TC-API-011 | Validate Nested JSON Data | GET | **PASS** |
 
 ## Test details
 
@@ -330,6 +331,43 @@ GET https://jsonplaceholder.typicode.com/users?username=NonExistingUser
 **Expected Result:** API returns `200 OK` with an empty array because no users match the filter.
 
 **Actual Result:** API returned `200 OK` with `[]`, meaning zero matching users were found.
+
+**Status:** **PASS**
+
+### TC-API-011 - Validate Nested JSON Data
+
+**Type:** Positive  
+**Purpose:** Verify user ID and nested JSON fields in a single-user response.
+
+**Request**
+
+```http
+GET https://jsonplaceholder.typicode.com/users/2
+```
+
+**Body:** none.
+
+**Steps**
+
+1. Open `TC-API-011 - Validate Nested JSON Data` in the imported collection.
+2. Check the saved method and URL, then select **Send**.
+3. Verify that the HTTP status is `200 OK` and the response body is a JSON object.
+4. Check that `id` equals `2`.
+5. Check that `address.city` exists and contains a text value.
+6. Check that `company.name` exists and contains a text value.
+
+**Expected Result:**
+
+- API returns `200 OK` with a JSON object.
+- User `id` is `2`.
+- `address.city` and `company.name` contain text values.
+
+**Actual Result:**
+
+- API returned `200 OK` with a JSON object.
+- User `id` was `2`.
+- `address.city` was "Wisokyburgh".
+- `company.name` was "Deckow-Crist".
 
 **Status:** **PASS**
 
