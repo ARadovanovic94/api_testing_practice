@@ -259,6 +259,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "TC-API-011 - Validate Nested JSON Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				},
+				"description": "Manual check: 200 OK, JSON object, id 2, address.city and company.name are text fields. Record actual values in test-cases/api-test-cases.md. No automated assertions."
+			},
+			"response": []
 		}
 	]
 }
